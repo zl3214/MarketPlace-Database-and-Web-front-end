@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Search Results</title>
+</head>
+<body>
+  <h1>Search Results</h1>
+  {% if search_results %}
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+      {% for product in search_results %}
+        <tr>
+          <td>{{ product['name'] }}</td>
+          <td>{{ product['description'] }}</td>
+          <td>{{ product['price'] }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No results found.</p>
+  {% endif %}
+  <p><a href="{{ url_for('search') }}">New Search</a></p>
+  <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+</body>
+</html>

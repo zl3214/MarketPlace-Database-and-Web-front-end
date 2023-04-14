@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Second Hand Market</title>
+</head>
+<body>
+  <h1>Welcome to Second Hand Market</h1>
+  {% if logged_in %}
+    <p><a href="{{ url_for('add_product') }}">Add Product</a></p>
+    <p><a href="{{ url_for('search') }}">Search Products</a></p>
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+  {% else %}
+    <p><a href="{{ url_for('register') }}">Register</a></p>
+    <p><a href="{{ url_for('login') }}">Login</a></p>
+  {% endif %}
+</body>
+</html>
